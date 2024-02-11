@@ -1,9 +1,162 @@
-body{
-    font-family: 'Nunito', sans-serif;
+:root {
+    --color-primario: #0000F3;
+    --color-texto-lateral: #5958EA; 
+    --color-lateral: #E2DEDC;
+    --color-fondo: #F3F5FC;
+    /*--espaciado: 10px;*/ 
 }
 
-h1{ 
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--color-primario);
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+
+}
+
+h1 { 
 font-family: 'Clash Display', sans-serif;
 font-weight: 600;
+font-size: 52px;
+display: inline-block;
+
 }
 
+main {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.textarea-encriptar {
+    display: block;
+    width: 80%;
+    margin: 2% 10% 4% 10%;
+    min-height: 45%;
+    background-color: var(--color-fondo);
+
+}
+
+.textarea-desencriptar {
+    background-color: var(--color-lateral);
+}
+
+footer {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+}
+
+.titulo {
+    margin: 0;
+    height: 230px;
+    padding: 10px;
+}
+
+.titulo img {
+    width: 170px;
+    height: auto;
+}
+
+.contenedor-izq {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width:67%;
+    height: 768px;
+    box-sizing: border-box;
+}
+
+.contenedor-der {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    box-sizing: border-box;
+}
+
+.encriptador {
+    
+
+}
+
+.desencriptador {
+    background-color: var(--color-lateral);
+    height: 768px;
+    text-align: center;
+
+}
+
+.allura-challenge {
+    font-family: 'Clash Display', sans-serif;
+    font-size: 18px;
+    color: #495057;
+    margin: 20px;
+
+}
+
+.button-linea, .button-solido {
+    border-radius: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+}
+
+.button-linea {
+    background-color: transparent;
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+    margin-top: 20px;
+}
+
+.button-solido {
+    background-color: var(--color-primario);
+    border: none;
+    color: white;
+    margin-right: 10px; 
+}
+
+.contenedor-botones, .advertencia {
+    margin-left: 200px;
+}
+
+.advertencia {
+    font-size: 12px;
+    color: #495057;
+}
+
+.advertencia svg{
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+.desencriptador img {
+    margin: 0 auto;
+    margin-top: 25%;
+}
+
+.span-1 {
+    margin-top: 20px;
+    font-size: 24px;
+
+}
+
+.span-2 {
+    font-size: 14px;
+    color: var(--color-texto-lateral);
+    margin-top: 20px
+
+}
+
+.textarea-desencriptar {
+    display: block;
+    margin: 0 auto;
+}
+
+footer svg {
+    vertical-align: middle;
+    margin-right: 5px;
+}
