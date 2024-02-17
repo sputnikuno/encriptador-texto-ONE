@@ -4,6 +4,8 @@ let textoProcesado = document.getElementById("textoProcesado");
 let imgLateral = document.getElementById("img-lateral");
 let botonCopiar = document.getElementById("boton-copiar");
 
+
+//ENCRIPTAR TEXTO
 function encriptar() {
     let textoAEncriptar = document.getElementById("textoEncriptar").value;
 
@@ -21,6 +23,7 @@ function encriptar() {
     //console.log(textoAEncriptar);
 }
 
+//DESENCRIPTAR TEXTO
 function desencriptar() {
     let textoDesencriptar = document.getElementById("textoEncriptar").value;
     
@@ -39,12 +42,13 @@ function desencriptar() {
     //console.log(textoDesencriptar);
 }
 
+//BOTON COPIAR
 function copiar() {
     let textoCopiar = document.getElementById('textoProcesado').value;
     const copiarContenido = async () => {
         try {
             await navigator.clipboard.writeText(textoCopiar);
-            alert('Contenido copiado al portapapeles');
+            swal('','Contenido copiado al portapapeles','success');
         } catch (err) {
             console.error('Error al copiar: ', err);
         }
@@ -53,7 +57,44 @@ function copiar() {
     copiarContenido();
     }
 
-botonDesencriptar.onclick = desencriptar;
-botonEncriptar.onclick = encriptar;
-botonCopiar.onclick = copiar;
+//colocar cursor del textarea al inicio del cuadro
+let textarea = document.getElementById("textoEncriptar");
 
+function colocarCursorAlInicio() {
+
+    textarea.setSelectionRange(0, 0);
+}
+
+textarea.addEventListener("focus", colocarCursorAlInicio);
+
+//alerta de mayusculas y acentos
+function verificarTexto(texto) {
+    for (let i = 0; i < texto.length; i++) {
+        //verificar mayusculas
+        if (texto[i] >= 'A' && texto[i] <= 'Z') {
+            swal('', 'Sólo palabras sin mayúsculas. Intenta de nuevo.','error');
+            return false;
+        }
+
+        //verificar acentos
+        if (['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'].includes(texto[i])) {
+            swal('','Sólo palabras sin acentos. Intenta de nuevo.','error');
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+botonDesencriptar.onclick = desencriptar;
+
+botonEncriptar.onclick = function() {
+    let textoAEncriptar = document.getElementById("textoEncriptar").value;
+    
+    if (verificarTexto(textoAEncriptar)) {
+        encriptar();
+    }
+};
+
+botonCopiar.onclick = copiar;

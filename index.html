@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Encriptador de textos</title>
 </head>
 
@@ -21,44 +22,38 @@
 
             <div class="titulo">
                 <img src="img/fig-1.png">
-                <h1> Encriptador de texto</h1>
+                <h1> Encriptador de textos</h1>
+                
             </div>
-            
-            <div class="encriptador">
-                <textarea rows="12" cols="70" name="encriptado" id="textoEncriptar" class="textarea-encriptar" placeholder="Ingresa el texto aquí.">    
-                </textarea>
+                <textarea rows="12" cols="60" name="encriptado" id="textoEncriptar" class="textarea-encriptar" placeholder="Ingresa el texto aquí."></textarea>
                 
                 <p class="advertencia">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
                         <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                       </svg>
-                    Solo letras minúsculas y sin acentos.</p>
+                    Sólo letras minúsculas y sin acentos.</p>
                 
                 <div class="contenedor-botones">
                     <button class="button-solido" id="encriptar">Encriptar</button>
                     <button class="button-linea" id="desencriptar">Desencriptar</button>
                 </div>
-                
-            </div>
-
         </div>
 
         <div class="contenedor-der">
 
-            <div class="desencriptador">
+            
                 <p class="allura-challenge">Alura Challenges ONE</p>
                 
                 <div id="img-lateral">
                     <img  src="img/fig-2.png">
                     <p class="span-1">Ningún mensaje fue <br> encontrado</p>
-                    <p class="span-2">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <p class="span-2">Ingresa el texto que desees encriptar o <br>desencriptar.</p>
                 </div>
 
-                <textarea name="desencriptado" rows="12" columns="40" class="textarea-desencriptar" id="textoProcesado">
-                </textarea>
+                <textarea name="desencriptado" rows="17" cols="30" class="textarea-desencriptar" id="textoProcesado" readonly></textarea>
 
                 <button class="button-linea" id="boton-copiar">Copiar</button>
-            </div>
+            
 
         </div>
 
