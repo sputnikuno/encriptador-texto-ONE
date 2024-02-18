@@ -185,6 +185,9 @@ footer svg {
         margin-right: 0;
         margin-left: 0;
     }
+    .contenedor-der{
+        padding-bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -197,9 +200,6 @@ footer svg {
     }
     .advertencia {
         margin: 20px 0;
-    }
-    .textarea-encriptar {
-        margin-top: 60px;
     }
     .advertencia {
         margin-left: 25%;
