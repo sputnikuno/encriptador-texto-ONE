@@ -38,6 +38,10 @@ footer {
     line-height: 80px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .titulo {
     margin: 0;
     height: 150px;
