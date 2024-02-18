@@ -25,6 +25,7 @@ h1 {
 main {
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: auto;
 }
@@ -49,23 +50,25 @@ footer {
 }
 
 .contenedor-izq {
-    margin-right: 10px;
-    margin-left: 15px; 
+    display: flex;
+    flex-direction: column;
     margin-bottom: 40px;
     width:67%;
     height: auto;
     box-sizing: border-box;
     min-width: 400px;
+    /*flex-wrap: wrap;*/
 }
 
 .contenedor-der {
-    /*display: flex;
-    flex-direction: column;*/
+    display: flex;
+    flex-direction: column;
     width: 33%;
     height: auto;
     box-sizing: border-box;
     background-color: var(--color-lateral);
     text-align: center;
+    /*flex-wrap: wrap;*/
 }
 
 .textarea-encriptar,.textarea-desencriptar {
@@ -99,7 +102,6 @@ footer {
 
 }
 
-
 .allura-challenge {
     font-family: 'Clash Display', sans-serif;
     font-size: 18px;
@@ -130,7 +132,7 @@ footer {
 }
 
 .contenedor-botones, .advertencia {
-    margin-left: 200px;
+    margin-left: 25%;
 }
 
 .advertencia {
@@ -168,17 +170,35 @@ footer svg {
 
 #boton-copiar {
     display: none;
-    margin: 40px auto;
+    margin: 20px auto;
 
 }
 
-/* Media query for iPads and smaller screens */
+/* Media query para tamaños de pantalla más pequeños, como iPads */
 @media screen and (max-width: 1024px) {
     .contenedor-izq, .contenedor-der {
-      width: 100%; /* Set width to 100% for smaller screens */
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
     }
-  
-    .contenedor-botones, .advertencia {
-      margin-left: 0; /* Reset margin for smaller screens */
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+        margin-left: 20px;
     }
-  }
+    .titulo img {
+        text-align: center;
+    }
+    .advertencia {
+        margin: 20px 0;
+    }
+    .textarea-encriptar {
+        margin-top: 60px;
+    }
+    .advertencia {
+        margin-left: 25%;
+    }
+
+}
